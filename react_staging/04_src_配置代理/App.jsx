@@ -3,17 +3,18 @@ import axios from 'axios'
 
 export default class App extends Component {
 
-	getStudentData = ()=>{
+	getStudentData = () => {
+		// 单独配置代理，端口号后面需要加配置的前缀，这里端口号仍为本地端口号
 		axios.get('http://localhost:3000/api1/students').then(
-			response => {console.log('成功了',response.data);},
-			error => {console.log('失败了',error);}
+			response => { console.log('成功了', response.data); },
+			error => { console.log('失败了', error); }
 		)
 	}
 
-	getCarData = ()=>{
+	getCarData = () => {
 		axios.get('http://localhost:3000/api2/cars').then(
-			response => {console.log('成功了',response.data);},
-			error => {console.log('失败了',error);}
+			response => { console.log('成功了', response.data); },
+			error => { console.log('失败了', error); }
 		)
 	}
 
