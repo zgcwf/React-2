@@ -12,12 +12,14 @@ export default class List extends Component {
 	} 
 
 	componentDidMount(){
+		// 在挂载完成后订阅消息，回调函数中第一个参数也是消息名，如果不想用可以用_占位
 		this.token = PubSub.subscribe('atguigu',(_,stateObj)=>{
 			this.setState(stateObj)
 		})
 	}
 
 	componentWillUnmount(){
+		// 当组件即将被销毁掉的时候取消订阅
 		PubSub.unsubscribe(this.token)
 	}
 
